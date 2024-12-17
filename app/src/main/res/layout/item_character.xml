@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.marvelapp.characters.domain.entity.CharacterEntity" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+ >
+
+
+            <ImageView
+                android:id="@+id/image_character"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/marvel_logo"
+                />
+
+
+        <TextView
+            android:id="@+id/text_character_name"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/rectangle_shape"
+            android:gravity="center"
+            android:text="@{viewModel.name}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            android:maxLines="2"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/image_character"
+            app:layout_constraintStart_toStartOf="@id/image_character"
+            tools:text="Spider man"
+
+            />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
